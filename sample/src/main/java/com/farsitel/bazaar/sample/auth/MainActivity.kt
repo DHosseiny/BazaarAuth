@@ -52,7 +52,10 @@ class MainActivity : AppCompatActivity() {
                 context = this@MainActivity,
                 owner = this@MainActivity,
                 callback = BazaarStorageCallback {
-                    dataTV.text = it?.data?.toReadableString()
+                    dataTV.text = "isSuccessful: %1s, data: %2s".format(
+                        it?.isSuccessful,
+                        it?.data?.toReadableString()
+                    )
                 }
             )
         }
@@ -63,7 +66,10 @@ class MainActivity : AppCompatActivity() {
                 owner = this@MainActivity,
                 data = dataET.text.toString().toByteArray(),
                 callback = BazaarStorageCallback {
-                    dataTV.text = it?.data?.toReadableString()
+                    dataTV.text = "isSuccessful: %1s, data: %2s".format(
+                        it?.isSuccessful,
+                        it?.data?.toReadableString()
+                    )
                 }
             )
         }
